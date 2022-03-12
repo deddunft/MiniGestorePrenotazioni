@@ -6,4 +6,5 @@ public class prenotazioneG extends Prenotazione{
         super(sala, posti,codice);
         this.posti = posti;
     }
+
 }

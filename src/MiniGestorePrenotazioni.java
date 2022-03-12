@@ -52,24 +52,24 @@ public class MiniGestorePrenotazioni {
             if (prenotazione.getSala() == salae.getSala() && prenotazione instanceof PrenotazioneSingola) {
                 int pippo = salae.getPosti();
                 salae.setPosti(pippo - prenotazione.getPosti());
-                prenotazionee[counte]=prenotazione;
+                prenotazionee[prenotazione.getCodice()]=prenotazione;
                 counte++;
 
             } else if (prenotazione.getSala() == salai.getSala()) {
                 int pippo = salai.getPosti();
                 salai.setPosti(pippo - prenotazione.getPosti());
-                prenotazionei[counti]=prenotazione;
+                prenotazionei[prenotazione.getCodice()]=prenotazione;
                 counti++;
 
             } else if (prenotazione instanceof prenotazioneG && prenotazione.getPosti() < salai.getPosti() + salae.getPosti()) {
                 int pippo = salae.getPosti();
                 salae.setPosti(pippo - prenotazione.getPosti());
-                prenotazionee[counte]=prenotazione;
+                prenotazionee[prenotazione.getCodice()]=prenotazione;
                 counte++;
             } else if (prenotazione instanceof prenotazioneG && prenotazione.getPosti() < salai.getPosti() + salae.getPosti()) {
                 int pippo = salai.getPosti();
                 salai.setPosti(pippo - prenotazione.getPosti());
-                prenotazionee[counte]=prenotazione;
+                prenotazionee[prenotazione.getCodice()]=prenotazione;
                 counte++;
             }
             cod= count;
