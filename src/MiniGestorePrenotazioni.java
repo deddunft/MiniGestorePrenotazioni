@@ -106,11 +106,8 @@ public class MiniGestorePrenotazioni {
     @Override
     public String toString() {
         return "MiniGestorePrenotazioni{" +
-                "salai=" + salai +
-                ", salae=" + salae +
-                ", cod=" + cod +
-                ", prenotazionei=" + Arrays.toString(prenotazionei) +
-                ", prenotazionee=" + Arrays.toString(prenotazionee) +
+                "prenotazione interno=" + Arrays.toString(prenotazionei) +
+                ", prenotazione esterno=" + Arrays.toString(prenotazionee) +
                 '}';
     }
 }

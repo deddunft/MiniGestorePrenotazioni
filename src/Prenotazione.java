@@ -1,7 +1,7 @@
 public abstract class Prenotazione {
     private Sala sala;
     private int posti;
-    private int codice = 0;
+    private int codice ;
 
 
     public Prenotazione(Sala sala, int posti) {
