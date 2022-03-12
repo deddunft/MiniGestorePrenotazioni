@@ -1,11 +1,11 @@
 import java.util.Arrays;
 
 public class MiniGestorePrenotazioni {
-    private int n;
-    private int m;
+    public int n;
+    public int m;
     public sSala salai;
     public sSala salae;
-    private int cod;
+    public int cod;
     private int count;
     private int counte;
     private int counti;
@@ -21,13 +21,9 @@ public class MiniGestorePrenotazioni {
         salai = new sSala(this.n,Sala.INTERNO);
         this.m = m;
         salae= new sSala(this.m,Sala.ESTERNO);
-         int codice = cod++;
-
         prenotazionei = new Prenotazione[salai.getPosti()];
         prenotazionee = new Prenotazione[salai.getPosti()];
     }
-
-
 
     public sSala getSalai() {
         return salai;
@@ -59,13 +55,11 @@ public class MiniGestorePrenotazioni {
                 prenotazionee[counte]=prenotazione;
                 counte++;
 
-
             } else if (prenotazione.getSala() == salai.getSala()) {
                 int pippo = salai.getPosti();
                 salai.setPosti(pippo - prenotazione.getPosti());
                 prenotazionei[counti]=prenotazione;
                 counti++;
-
 
             } else if (prenotazione instanceof prenotazioneG && prenotazione.getPosti() < salai.getPosti() + salae.getPosti()) {
                 int pippo = salae.getPosti();
@@ -77,9 +71,9 @@ public class MiniGestorePrenotazioni {
                 salai.setPosti(pippo - prenotazione.getPosti());
                 prenotazionee[counte]=prenotazione;
                 counte++;
-
             }
             cod= count;
+
             count++;
             return true;
         }
@@ -95,11 +89,7 @@ public class MiniGestorePrenotazioni {
             int pippo = salai.getPosti();
             salai.setPosti(prenotazione.getPosti()+pippo);
             prenotazionei[prenotazione.getCodice()]=null;
-
-
         }
-
-
     }
 
 

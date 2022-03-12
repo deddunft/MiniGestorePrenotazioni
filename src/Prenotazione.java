@@ -1,13 +1,16 @@
 public abstract class Prenotazione {
     private Sala sala;
     private int posti;
-    private int codice ;
 
 
-    public Prenotazione(Sala sala, int posti) {
+    public int codice;
+
+
+    public Prenotazione(Sala sala, int posti, int codice) {
         this.sala = sala;
         this.posti = posti;
-        this.codice = codice++;
+        this.codice=codice;
+
     }
 
 
