@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MiniGestorePrenotazioni {
     private int n;
     private int m;
@@ -8,8 +10,8 @@ public class MiniGestorePrenotazioni {
     private int counte;
     private int counti;
 
-    private Prenotazione[] prenotazionei = new Prenotazione[salai.getPosti()];
-    private Prenotazione[] prenotazionee = new Prenotazione[salai.getPosti()];
+    private Prenotazione[] prenotazionei;
+    private Prenotazione[] prenotazionee;
 
 
 
@@ -21,6 +23,8 @@ public class MiniGestorePrenotazioni {
         salae= new sSala(this.m,Sala.ESTERNO);
          int codice = cod++;
 
+        prenotazionei = new Prenotazione[salai.getPosti()];
+        prenotazionee = new Prenotazione[salai.getPosti()];
     }
 
 
@@ -85,10 +89,13 @@ public class MiniGestorePrenotazioni {
         if (prenotazione.getSala() == salae.getSala()) {
             int pippo = salae.getPosti();
             salae.setPosti(prenotazione.getPosti()+pippo);
+            prenotazionee[prenotazione.getCodice()]=null;
         }
         if (prenotazione.getSala() == salai.getSala()) {
             int pippo = salai.getPosti();
             salai.setPosti(prenotazione.getPosti()+pippo);
+            prenotazionei[prenotazione.getCodice()]=null;
+
 
         }
 
@@ -96,5 +103,14 @@ public class MiniGestorePrenotazioni {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "MiniGestorePrenotazioni{" +
+                "salai=" + salai +
+                ", salae=" + salae +
+                ", cod=" + cod +
+                ", prenotazionei=" + Arrays.toString(prenotazionei) +
+                ", prenotazionee=" + Arrays.toString(prenotazionee) +
+                '}';
+    }
 }
