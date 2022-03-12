@@ -3,8 +3,8 @@ public class mein {
     public static void main(String[] args) {
         MiniGestorePrenotazioni mgp1 = new MiniGestorePrenotazioni(5,5);
         PrenotazioneSingola p1 ;
-        Contatore counti = new Contatore();
-        Contatore counte = new Contatore();
+        Contatore counti = new Contatore(mgp1.getSalai().getPosti());
+        Contatore counte = new Contatore(mgp1.getSalae().getPosti());
 
         System.out.println(mgp1.salae.getPosti());
         prenotazioneG pg2 = new prenotazioneG(Sala.INTERNO,3, counti.getCont());
